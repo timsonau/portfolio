@@ -2,7 +2,7 @@ import SectionHeading from "./SectionHeading";
 
 interface SkillCategoryProps {
   title: string;
-  skills: string[];
+  skills: readonly string[];
 }
 
 function SkillCategory({ title, skills }: SkillCategoryProps) {
