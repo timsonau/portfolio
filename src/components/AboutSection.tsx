@@ -6,9 +6,8 @@ export default function AboutSection() {
       <SectionHeading>About</SectionHeading>
       <div className="flex flex-col gap-4 text-muted-foreground leading-relaxed" data-reveal>
         <p>
-          {"I build "}
-          <span className="text-foreground">distributed systems at scale</span>
-          {" \u2014 the kind that handle thousands of requests per second, save millions in costs, and run so reliably you forget they\u2019re there."}
+          {"An engineer with a proven track record of delivering high impact "}
+          <span className="text-foreground">distributed systems at scale.</span>
         </p>
         <p>
           {"Currently a "}

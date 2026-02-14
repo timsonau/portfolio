@@ -4,7 +4,8 @@ const SKILL_CATEGORIES = [
   { title: "Languages", skills: ["Go", "Python", "Java", "JavaScript", "Swift", "Kotlin"] },
   { title: "Infrastructure", skills: ["Kubernetes", "Docker", "Helm", "Kafka", "AWS", "Azure"] },
   { title: "Data", skills: ["Snowflake", "Cassandra", "PostgreSQL", "Elasticsearch"] },
-  { title: "AI & Tooling", skills: ["MCP", "LLM Agents", "Prometheus", "Grafana", "Splunk"] },
+  { title: "AI & Tooling", skills: ["MCP", "LLM Agents"] },
+  { title: "Observability", skills: ["Prometheus", "Grafana", "OpenTelemetry"] },
 ] as const;
 
 export default function SkillsSection() {

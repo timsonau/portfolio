@@ -82,7 +82,7 @@ export default function Portfolio() {
             </h1>
 
             <h2 className="hero-enter hero-delay-3 text-lg font-medium text-muted-foreground">
-              Senior Software Engineer
+              <b>Senior Software Engineer</b> @ GEICO 
             </h2>
 
             <p className="hero-enter hero-delay-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
