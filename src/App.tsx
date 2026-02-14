@@ -9,10 +9,12 @@ import SocialLinks from "./components/SocialLinks";
 import ThemeToggle from "./components/ThemeToggle";
 import useActiveSection from "./hooks/useActiveSection";
 import useMouseGlow from "./hooks/useMouseGlow";
+import useScrollReveal from "./hooks/useScrollReveal";
 
 export default function App() {
   const activeSection = useActiveSection();
   const { x, y } = useMouseGlow();
+  useScrollReveal();
 
   return (
     <div className="relative">
