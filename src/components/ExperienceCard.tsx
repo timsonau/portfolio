@@ -5,8 +5,8 @@ interface ExperienceCardProps {
   title: string;
   company: string;
   companyUrl?: string;
-  description: string[];
-  technologies: string[];
+  description: readonly string[];
+  technologies: readonly string[];
 }
 
 export default function ExperienceCard({
