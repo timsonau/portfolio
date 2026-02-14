@@ -1,35 +1,76 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import AboutSection from "./components/AboutSection";
+import EducationSection from "./components/EducationSection";
+import ExperienceSection from "./components/ExperienceSection";
+import Footer from "./components/Footer";
+import Navigation from "./components/Navigation";
+import SkillsSection from "./components/SkillsSection";
+import SocialLinks from "./components/SocialLinks";
+import useActiveSection from "./hooks/useActiveSection";
+import useMouseGlow from "./hooks/useMouseGlow";
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const activeSection = useActiveSection();
+  const { x, y } = useMouseGlow();
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className="relative">
+      {/* Cursor spotlight glow -- only visible on large screens */}
+      <div
+        className="pointer-events-none fixed inset-0 z-30 hidden transition-opacity duration-300 lg:block"
+        style={{
+          background: `radial-gradient(600px circle at ${x}px ${y}px, rgba(56, 189, 248, 0.06), transparent 80%)`,
+        }}
+        aria-hidden="true"
+      />
 
-export default App
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:flex lg:justify-between lg:gap-4 lg:px-24 lg:py-0">
+        {/* ---- Left Column: Sticky Sidebar ---- */}
+        <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+          <div className="flex flex-col gap-4">
+            {/* Profile Photo */}
+            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-lg shadow-accent/5 transition-all duration-500 hover:border-accent/40 hover:shadow-accent/10">
+              <img
+                src="/images/tim-son.jpg"
+                alt="Tim Son, Senior Software Engineer"
+                className="h-full w-full object-cover object-top"
+                loading="eager"
+              />
+            </div>
+
+            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+              <a href="/">Tim Son</a>
+            </h1>
+
+            <h2 className="text-lg font-medium tracking-tight text-foreground/80">
+              Senior Software Engineer at GEICO
+            </h2>
+
+            <p className="max-w-xs leading-relaxed text-muted-foreground">
+              I design and build distributed systems that serve millions of
+              users and save companies millions of dollars.
+            </p>
+
+            {/* Desktop Navigation */}
+            <div className="mt-12">
+              <Navigation activeSection={activeSection} />
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="mt-8 lg:mt-0">
+            <SocialLinks />
+          </div>
+        </header>
+
+        {/* ---- Right Column: Scrollable Content ---- */}
+        <main className="flex flex-col gap-24 pt-24 lg:w-1/2 lg:py-24">
+          <AboutSection />
+          <ExperienceSection />
+          <SkillsSection />
+          <EducationSection />
+          <Footer />
+        </main>
+      </div>
+    </div>
+  );
+}
