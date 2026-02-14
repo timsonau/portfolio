@@ -9,18 +9,6 @@ export default function AboutSection() {
     >
       <SectionHeading>About</SectionHeading>
 
-      {/* Profile Photo */}
-      <div className="mb-8 flex items-start">
-        <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl border-2 border-border shadow-lg shadow-accent/5 transition-all duration-500 hover:border-accent/40 hover:shadow-accent/10">
-          <img
-            src="/images/tim-son.jpg"
-            alt="Tim Son smiling at Auburn University graduation"
-            className="h-full w-full object-cover object-top"
-            loading="eager"
-          />
-        </div>
-      </div>
-
       <div className="flex flex-col gap-4 text-muted-foreground leading-relaxed">
         <p>
           I'm a software engineer who specializes in{" "}

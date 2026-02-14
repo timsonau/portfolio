@@ -27,6 +27,16 @@ export default function App() {
         {/* ---- Left Column: Sticky Sidebar ---- */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col gap-4">
+            {/* Profile Photo */}
+            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-lg shadow-accent/5 transition-all duration-500 hover:border-accent/40 hover:shadow-accent/10">
+              <img
+                src="/images/tim-son.jpg"
+                alt="Tim Son, Senior Software Engineer"
+                className="h-full w-full object-cover object-top"
+                loading="eager"
+              />
+            </div>
+
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               <a href="/">Tim Son</a>
             </h1>
