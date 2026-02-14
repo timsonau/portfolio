@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const SECTION_IDS = ["about", "experience", "skills", "education"];
+const SECTION_IDS = ["about", "experience", "articles", "skills", "education"];
 
 /**
  * Tracks which section is currently in view using the Intersection Observer API.
