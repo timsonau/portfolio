@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+
 import AboutSection from "./components/AboutSection";
 import ArticlesSection from "./components/ArticlesSection";
 import EducationSection from "./components/EducationSection";
