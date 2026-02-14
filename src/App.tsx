@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <div className="relative">
-      {/* Cursor spotlight glow - only visible on large screens */}
+      {/* Cursor spotlight glow -- only visible on large screens */}
       <div
         className="pointer-events-none fixed inset-0 z-30 hidden transition-opacity duration-300 lg:block"
         style={{
@@ -24,7 +24,7 @@ export default function App() {
       />
 
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:flex lg:justify-between lg:gap-4 lg:px-24 lg:py-0">
-        {/* ──────────── Left Column: Sticky Sidebar ──────────── */}
+        {/* ---- Left Column: Sticky Sidebar ---- */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col gap-4">
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
@@ -35,7 +35,7 @@ export default function App() {
               Senior Software Engineer at GEICO
             </h2>
 
-            <p className="max-w-xs text-muted-foreground leading-relaxed">
+            <p className="max-w-xs leading-relaxed text-muted-foreground">
               I design and build distributed systems that serve millions of
               users and save companies millions of dollars.
             </p>
@@ -52,7 +52,7 @@ export default function App() {
           </div>
         </header>
 
-        {/* ──────────── Right Column: Scrollable Content ──────────── */}
+        {/* ---- Right Column: Scrollable Content ---- */}
         <main className="flex flex-col gap-24 pt-24 lg:w-1/2 lg:py-24">
           <AboutSection />
           <ExperienceSection />
