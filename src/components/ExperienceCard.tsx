@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { staggerChildVariants } from "./ScrollReveal";
 
 interface ExperienceCardProps {
   dateRange: string;
@@ -18,8 +20,12 @@ export default function ExperienceCard({
   technologies,
 }: ExperienceCardProps) {
   return (
-    <article className="group relative grid pb-1 transition-all lg:grid-cols-8 lg:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50">
-      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition-all lg:block lg:group-hover:bg-card/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg" />
+    <motion.article
+      variants={staggerChildVariants}
+      className="group relative grid pb-1 transition-all duration-300 lg:grid-cols-8 lg:gap-4 lg:hover:!opacity-100 lg:group-hover/list:opacity-50"
+    >
+      {/* Hover backdrop */}
+      <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-lg transition-all duration-300 lg:block lg:group-hover:bg-card lg:group-hover:shadow-[0_0_0_1px_var(--border)]" />
 
       <header className="z-10 mb-2 mt-1 text-xs font-medium uppercase tracking-wide text-muted-foreground lg:col-span-2">
         {dateRange}
@@ -32,7 +38,7 @@ export default function ExperienceCard({
               href={companyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline gap-1 text-foreground transition-colors duration-300 group-hover:text-accent"
+              className="inline-flex items-baseline gap-1 text-foreground transition-colors duration-300 group-hover:text-highlight"
             >
               <span>
                 {title} {"·"} {company}
@@ -51,7 +57,10 @@ export default function ExperienceCard({
 
         <ul className="mt-2 flex flex-col gap-2 text-sm leading-relaxed text-muted-foreground">
           {description.map((item, index) => (
-            <li key={index} className="relative pl-4 before:absolute before:left-0 before:top-[10px] before:h-1 before:w-1 before:rounded-full before:bg-muted-foreground/50">
+            <li
+              key={index}
+              className="relative pl-4 before:absolute before:left-0 before:top-[10px] before:h-1 before:w-1 before:rounded-full before:bg-muted-foreground/40"
+            >
               {item}
             </li>
           ))}
@@ -61,13 +70,13 @@ export default function ExperienceCard({
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="inline-flex items-center rounded-full bg-accent/10 px-3 py-1 text-xs font-medium text-accent"
+              className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-medium text-foreground/80"
             >
               {tech}
             </span>
           ))}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }

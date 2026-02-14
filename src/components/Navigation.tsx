@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface NavigationProps {
   activeSection: string;
 }
@@ -23,15 +25,16 @@ export default function Navigation({ activeSection }: NavigationProps) {
             className="group flex items-center gap-4 transition-all duration-300"
             aria-current={isActive ? "location" : undefined}
           >
-            <span
-              className={`h-px transition-all duration-300 ${
-                isActive
-                  ? "w-16 bg-foreground"
-                  : "w-8 bg-muted-foreground group-hover:w-16 group-hover:bg-foreground"
-              }`}
+            <motion.span
+              className="h-px bg-foreground"
+              animate={{
+                width: isActive ? 64 : 32,
+                opacity: isActive ? 1 : 0.3,
+              }}
+              transition={{ duration: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
             />
             <span
-              className={`text-xs font-medium tracking-widest transition-colors duration-300 ${
+              className={`text-xs font-medium tracking-[0.2em] transition-all duration-300 ${
                 isActive
                   ? "text-foreground"
                   : "text-muted-foreground group-hover:text-foreground"

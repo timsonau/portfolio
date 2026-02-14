@@ -1,5 +1,6 @@
 import ExperienceCard from "./ExperienceCard";
 import SectionHeading from "./SectionHeading";
+import { StaggerContainer } from "./ScrollReveal";
 
 const EXPERIENCES = [
   {
@@ -95,14 +96,14 @@ export default function ExperienceSection() {
     >
       <SectionHeading>Experience</SectionHeading>
 
-      <div className="group/list flex flex-col gap-12">
+      <StaggerContainer className="group/list flex flex-col gap-12" staggerDelay={0.1}>
         {EXPERIENCES.map((experience) => (
           <ExperienceCard
             key={`${experience.company}-${experience.dateRange}`}
             {...experience}
           />
         ))}
-      </div>
+      </StaggerContainer>
     </section>
   );
 }

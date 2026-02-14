@@ -4,32 +4,34 @@
 
 /* Light theme (default) */
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --muted: #e2e8f0;
-  --muted-foreground: #64748b;
-  --accent: #0284c7;
-  --accent-foreground: #0369a1;
-  --border: #e2e8f0;
+  --background: #fafafa;
+  --foreground: #0a0a0a;
+  --muted: #e5e5e5;
+  --muted-foreground: #737373;
+  --accent: #0a0a0a;
+  --accent-foreground: #404040;
+  --border: #e5e5e5;
   --card: #ffffff;
-  --card-foreground: #334155;
-  --glow-color: rgba(2, 132, 199, 0.06);
-  --selection-bg: rgba(2, 132, 199, 0.15);
+  --card-foreground: #404040;
+  --glow-color: rgba(10, 10, 10, 0.03);
+  --selection-bg: rgba(10, 10, 10, 0.08);
+  --highlight: #2563eb;
 }
 
 /* Dark theme */
 .dark {
-  --background: #0a0f1a;
-  --foreground: #e2e8f0;
-  --muted: #1e293b;
-  --muted-foreground: #64748b;
-  --accent: #38bdf8;
-  --accent-foreground: #0ea5e9;
-  --border: #1e293b;
-  --card: #111827;
-  --card-foreground: #cbd5e1;
-  --glow-color: rgba(56, 189, 248, 0.06);
-  --selection-bg: rgba(56, 189, 248, 0.2);
+  --background: #09090b;
+  --foreground: #fafafa;
+  --muted: #1c1c1e;
+  --muted-foreground: #71717a;
+  --accent: #fafafa;
+  --accent-foreground: #a1a1aa;
+  --border: #27272a;
+  --card: #111113;
+  --card-foreground: #d4d4d8;
+  --glow-color: rgba(250, 250, 250, 0.03);
+  --selection-bg: rgba(250, 250, 250, 0.1);
+  --highlight: #60a5fa;
 }
 
 * {
@@ -45,31 +47,56 @@ html {
 }
 
 body {
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   background-color: var(--background);
   color: var(--foreground);
   line-height: 1.6;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ::selection {
   background-color: var(--selection-bg);
-  color: var(--accent);
+  color: var(--foreground);
 }
 
+/* Premium scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--muted);
-  border-radius: 3px;
+  background: var(--border);
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--muted-foreground);
+}
+
+/* Smooth transitions for themed elements */
+a,
+button,
+span,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+section,
+header,
+footer,
+main,
+nav,
+article {
+  transition-property: color, background-color, border-color, box-shadow, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.3s;
 }
