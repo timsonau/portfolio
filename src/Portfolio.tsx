@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-
+import { useEffect, useCallback } from "react";
 import AboutSection from "./components/AboutSection";
 import ArticlesSection from "./components/ArticlesSection";
 import EducationSection from "./components/EducationSection";
@@ -12,13 +11,12 @@ import ThemeToggle from "./components/ThemeToggle";
 import useActiveSection from "./hooks/useActiveSection";
 import useMouseGlow from "./hooks/useMouseGlow";
 
-export default function App() {
+export default function Portfolio() {
   const activeSection = useActiveSection();
   const { x, y } = useMouseGlow();
 
-  // Scroll-reveal: observe all [data-reveal] elements, add .revealed on enter
-  useEffect(() => {
-    const elements = document.querySelectorAll("[data-reveal]");
+  const observeReveals = useCallback(() => {
+    const elements = document.querySelectorAll("[data-reveal]:not(.revealed)");
     if (elements.length === 0) return;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -29,11 +27,28 @@ export default function App() {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -20px 0px" }
     );
     elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    return observer;
   }, []);
+
+  // Initial + dynamic reveals: MutationObserver watches for new [data-reveal] nodes
+  useEffect(() => {
+    let io = observeReveals();
+
+    const mo = new MutationObserver(() => {
+      io?.disconnect();
+      io = observeReveals();
+    });
+
+    mo.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      io?.disconnect();
+      mo.disconnect();
+    };
+  }, [observeReveals]);
 
   return (
     <div className="relative">
@@ -50,7 +65,6 @@ export default function App() {
         {/* Left: Sticky Sidebar */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col gap-4">
-            {/* Photo + toggle */}
             <div className="flex items-start justify-between hero-enter hero-delay-1">
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-border transition-all duration-500 hover:shadow-lg">
                 <img
@@ -75,13 +89,11 @@ export default function App() {
               Distributed systems, cloud infrastructure, and AI-powered tooling.
             </p>
 
-            {/* Nav */}
             <div className="hero-enter hero-delay-5 mt-12">
               <Navigation activeSection={activeSection} />
             </div>
           </div>
 
-          {/* Social */}
           <div className="hero-enter hero-delay-6 mt-8 lg:mt-0">
             <SocialLinks />
           </div>
