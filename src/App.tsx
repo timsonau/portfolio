@@ -30,7 +30,7 @@ export default function App() {
             {/* Profile Photo */}
             <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-lg shadow-accent/5 transition-all duration-500 hover:border-accent/40 hover:shadow-accent/10">
               <img
-                src={`portfolio/images/tim-son.jpg`}
+                src={`./images/tim-son.jpg`}
                 alt="Tim Son, Senior Software Engineer"
                 className="h-full w-full object-cover object-top"
                 loading="eager"
