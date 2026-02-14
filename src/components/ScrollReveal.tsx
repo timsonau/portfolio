@@ -1,4 +1,4 @@
-import { motion, useInView, type Variant } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
 interface ScrollRevealProps {
@@ -39,13 +39,13 @@ export default function ScrollReveal({
       }
     : offset;
 
-  const hidden: Variant = {
+  const hidden = {
     opacity: 0,
     ...initialOffset,
     filter: "blur(4px)",
   };
 
-  const visible: Variant = {
+  const visible = {
     opacity: 1,
     x: 0,
     y: 0,

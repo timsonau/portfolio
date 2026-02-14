@@ -78,25 +78,4 @@ body {
   background: var(--muted-foreground);
 }
 
-/* Smooth transitions for themed elements */
-a,
-button,
-span,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-div,
-section,
-header,
-footer,
-main,
-nav,
-article {
-  transition-property: color, background-color, border-color, box-shadow, opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 0.3s;
-}
+
