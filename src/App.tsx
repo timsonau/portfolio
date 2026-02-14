@@ -32,12 +32,12 @@ export default function App() {
             </h1>
 
             <h2 className="text-lg font-medium tracking-tight text-foreground/80">
-              Software Engineer II at GEICO
+              Senior Software Engineer at GEICO
             </h2>
 
             <p className="max-w-xs text-muted-foreground leading-relaxed">
-              I build highly available, enterprise-grade distributed systems that
-              operate at massive scale.
+              I design and build distributed systems that serve millions of
+              users and save companies millions of dollars.
             </p>
 
             {/* Desktop Navigation */}
