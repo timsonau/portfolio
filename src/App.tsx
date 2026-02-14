@@ -1,10 +1,12 @@
 import AboutSection from "./components/AboutSection";
+import ArticlesSection from "./components/ArticlesSection";
 import EducationSection from "./components/EducationSection";
 import ExperienceSection from "./components/ExperienceSection";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import SkillsSection from "./components/SkillsSection";
 import SocialLinks from "./components/SocialLinks";
+import ThemeToggle from "./components/ThemeToggle";
 import useActiveSection from "./hooks/useActiveSection";
 import useMouseGlow from "./hooks/useMouseGlow";
 
@@ -18,7 +20,7 @@ export default function App() {
       <div
         className="pointer-events-none fixed inset-0 z-30 hidden transition-opacity duration-300 lg:block"
         style={{
-          background: `radial-gradient(600px circle at ${x}px ${y}px, rgba(56, 189, 248, 0.06), transparent 80%)`,
+          background: `radial-gradient(600px circle at ${x}px ${y}px, var(--glow-color), transparent 80%)`,
         }}
         aria-hidden="true"
       />
@@ -27,14 +29,17 @@ export default function App() {
         {/* ---- Left Column: Sticky Sidebar ---- */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col gap-4">
-            {/* Profile Photo */}
-            <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-lg shadow-accent/5 transition-all duration-500 hover:border-accent/40 hover:shadow-accent/10">
-              <img
-                 src={`${import.meta.env.BASE_URL}images/tim-son.jpg`}
-                alt="Tim Son, Senior Software Engineer"
-                className="h-full w-full object-cover object-top"
-                loading="eager"
-              />
+            {/* Profile photo + theme toggle row */}
+            <div className="flex items-start justify-between">
+              <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-full border-2 border-border shadow-lg shadow-accent/5 transition-all duration-500 hover:border-accent/40 hover:shadow-accent/10">
+                <img
+                  src={`${import.meta.env.BASE_URL}images/tim-son.jpg`}
+                  alt="Tim Son, Senior Software Engineer"
+                  className="h-full w-full object-cover object-top"
+                  loading="eager"
+                />
+              </div>
+              <ThemeToggle />
             </div>
 
             <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
@@ -66,6 +71,7 @@ export default function App() {
         <main className="flex flex-col gap-24 pt-24 lg:w-1/2 lg:py-24">
           <AboutSection />
           <ExperienceSection />
+          <ArticlesSection />
           <SkillsSection />
           <EducationSection />
           <Footer />
