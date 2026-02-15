@@ -25,7 +25,7 @@ export default function ArticlesSection() {
 
   return (
     <section id="articles" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Blog articles">
-      <SectionHeading>Articles</SectionHeading>
+      <SectionHeading>My Articles</SectionHeading>
       {loading && (
         <div className="flex flex-col gap-10">
           <ArticleSkeleton />
