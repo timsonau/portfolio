@@ -68,7 +68,7 @@ export default function Portfolio() {
             <div className="flex items-start justify-between hero-enter hero-delay-1">
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-border transition-all duration-500 hover:shadow-lg">
                 <img
-                  src= {`${import.meta.env.BASE_URL}images/tim-son.jpg`}
+                  src= {`${import.meta.env.BASE_URL}images/grad-pic.jpg`}
                   alt="Tim Son"
                   className="h-full w-full object-cover object-top"
                   loading="eager"
