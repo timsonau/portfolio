@@ -24,8 +24,8 @@ export default function ArticlesSection() {
   const { articles, loading, error } = useMediumArticles();
 
   return (
-    <section id="writing" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Blog articles">
-      <SectionHeading>Writing</SectionHeading>
+    <section id="articles" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Blog articles">
+      <SectionHeading>Articles</SectionHeading>
       {loading && (
         <div className="flex flex-col gap-10">
           <ArticleSkeleton />

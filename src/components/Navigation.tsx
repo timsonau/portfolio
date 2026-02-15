@@ -5,7 +5,7 @@ interface NavigationProps {
 const NAV_ITEMS = [
   { id: "about", label: "ABOUT" },
   { id: "experience", label: "EXPERIENCE" },
-  { id: "writing", label: "ARTICLES" },
+  { id: "articles", label: "ARTICLES" },
   { id: "skills", label: "SKILLS" },
   { id: "education", label: "EDUCATION" },
 ] as const;
