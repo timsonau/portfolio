@@ -1,7 +1,7 @@
 import SectionHeading from "./SectionHeading";
 
 const SKILL_CATEGORIES = [
-  { title: "Languages", skills: ["Go", "Python", "Java", "JavaScript", "Swift", "Kotlin"] },
+  { title: "Languages & Frameworks", skills: ["Go", "Python", "Java", "Spring Boot", "JavaScript", "React", "Swift", "Kotlin"] },
   { title: "Infrastructure", skills: ["Kubernetes", "Docker", "Helm", "Kafka", "AWS", "Azure"] },
   { title: "Data", skills: ["Snowflake", "Cassandra", "PostgreSQL", "Elasticsearch"] },
   { title: "AI & Tooling", skills: ["MCP", "LLM Agents"] },

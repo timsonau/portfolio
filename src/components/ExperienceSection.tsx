@@ -11,15 +11,15 @@ const EXPERIENCES = [
   //   technologies: ["Go", "Kubernetes", "Kafka", "MCP", "Snowflake"],
   // },
   {
-    dateRange: "2025 Feb \u2014 Present",
+    dateRange: "02/2025 \u2013 Present",
     title: "Software Engineer II",
     company: "GEICO",
     companyUrl: "https://www.geico.com",
-    description: "Built the event tracking system from scratch in Go \u2014 replaced a vendor solution, saving $4M+ annually. Led the Swift SDK powering analytics across GEICO\u2019s iOS app.",
+    description: "Built the event tracking system from scratch in Go \u2013 replaced a vendor solution, saving $4M+ annually. Led the Swift SDK powering analytics across GEICO\u2019s iOS app.",
     technologies: ["Go", "Kubernetes", "Swift", "React"],
   },
   {
-    dateRange: "2024 March \u2014 2025 Feb",
+    dateRange: "03/2024 \u2013 02/2025",
     title: "Software Engineer I",
     company: "GEICO",
     companyUrl: "https://www.geico.com",
@@ -27,7 +27,7 @@ const EXPERIENCES = [
     technologies: ["React", "Elasticsearch"],
   },
   {
-    dateRange: "2021 May \u2014 2024 Feb",
+    dateRange: "05/2021 \u2013 02/2024",
     title: "Software Developer",
     company: "UDA Technologies",
     companyUrl: "https://www.udatechnologies.com",
