@@ -1,4 +1,7 @@
 import SectionHeading from "./SectionHeading";
+const COLLEGE_TAGS = [
+  "4.0 GPA", "Summa Cum Laude", "AI Club Officer"
+] as const;
 
 export default function EducationSection() {
   return (
@@ -12,8 +15,11 @@ export default function EducationSection() {
             <h3 className="font-medium text-foreground leading-snug">B.S. Computer Science</h3>
             <p className="mt-0.5 text-sm text-muted-foreground">Auburn University</p>
             <div className="flex flex-wrap gap-1.5">
-              <span className="mt-2 inline-flex rounded-full bg-muted px-2.5 py-0.5 text-[11px] font-semibold text-highlight">4.0 GPA</span>
-              <span className="mt-2 inline-flex rounded-full bg-muted px-2.5 py-0.5 text-[11px] font-semibold text-highlight">Summa Cum Laude</span>
+              {
+                COLLEGE_TAGS.map((tag, i) => (
+                  <span key={i} className="mt-2 inline-flex rounded-full bg-muted px-2.5 py-0.5 text-[11px] font-semibold text-highlight">{tag}</span>
+                ))
+              }
             </div>
            
           </div>
