@@ -11,7 +11,7 @@ export default function AboutSection() {
         </p>
         <p>
           {"Currently a "}
-          <span className="text-foreground">Senior Software Engineer at GEICO</span>
+          <span className="text-foreground">Software Engineer at GEICO</span>
           {", where I architect event tracking infrastructure in Go and Kubernetes, and explore the intersection of "}
           <span className="text-foreground">AI and production systems</span>
           {" through MCP-based services for autonomous agents."}
