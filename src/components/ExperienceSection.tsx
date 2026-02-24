@@ -2,14 +2,14 @@ import ExperienceCard from "./ExperienceCard";
 import SectionHeading from "./SectionHeading";
 
 const EXPERIENCES = [
-  // {
-  //   dateRange: "2026 Feb \u2014 Present",
-  //   title: "Senior Software Engineer",
-  //   company: "GEICO",
-  //   companyUrl: "https://www.geico.com",
-  //   description: "Promoted to senior engineer to lead enterprise event tracking infrastructure processing 5,000+ req/s with 99.99% uptime. Architecting MCP-based services enabling AI agents to query behavioral data in real time.",
-  //   technologies: ["Go", "Kubernetes", "Kafka", "MCP", "Snowflake"],
-  // },
+  {
+    dateRange: "2026 Feb \u2014 Present",
+    title: "Senior Software Engineer",
+    company: "GEICO",
+    companyUrl: "https://www.geico.com",
+    description: "Promoted to senior engineer to lead enterprise event tracking infrastructure processing 5,000+ req/s with 99.99% uptime. Architecting MCP-based services enabling AI agents to query behavioral data in real time.",
+    technologies: ["Go", "Kubernetes", "Kafka", "MCP", "Snowflake"],
+  },
   {
     dateRange: "02/2025 \u2013 Present",
     title: "Software Engineer II",
