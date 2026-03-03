@@ -3,7 +3,7 @@ import SectionHeading from "./SectionHeading";
 
 const EXPERIENCES = [
   {
-    dateRange: "02/2026 \u2014 Present",
+    dateRange: "02/2026 \u2013 Present",
     title: "Senior Software Engineer",
     company: "GEICO",
     companyUrl: "https://www.geico.com",
