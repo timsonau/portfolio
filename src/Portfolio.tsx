@@ -78,7 +78,7 @@ export default function Portfolio() {
             </div>
 
             <h1 className="hero-enter hero-delay-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              <a href="/" className="transition-colors duration-300 hover:text-highlight">Tim Son</a>
+              <a href="/portfolio" className="transition-colors duration-300 hover:text-highlight">Tim Son</a>
             </h1>
 
             <h2 className="hero-enter hero-delay-3 text-lg font-medium text-muted-foreground">
