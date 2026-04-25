@@ -23,13 +23,18 @@ export default function ArticleCard({ title, link, thumbnail, pubDate, categorie
         )}
       </div>
       <div className="z-10 lg:col-span-6">
+        <div className="mb-2 grid grid-cols-3 gap-2 text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          <span>Medium Entry</span>
+          <span>{formatDate(pubDate)}</span>
+          <span>{categories[0] ?? "General"}</span>
+        </div>
         <h3 className="font-medium leading-snug">
           <a href={link} target="_blank" rel="noopener noreferrer" className="inline-flex items-baseline gap-1 text-foreground transition-colors duration-300 group-hover:text-highlight">
             <span className="text-balance">{title}</span>
             <ArrowUpRight size={14} className="inline-block shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
         </h3>
-        <time dateTime={pubDate} className="mt-1 block text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{formatDate(pubDate)}</time>
+        <time dateTime={pubDate} className="mt-1 block text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">Published {formatDate(pubDate)}</time>
         {categories.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
             {categories.slice(0, 4).map((tag) => (

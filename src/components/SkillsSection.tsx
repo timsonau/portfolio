@@ -14,7 +14,7 @@ export default function SkillsSection() {
       <SectionHeading>Skills</SectionHeading>
       <div className="section-frame flex flex-col gap-6 stagger" data-reveal>
         {SKILL_CATEGORIES.map((category) => (
-          <div key={category.title} className="reveal-child">
+          <div key={category.title} className="reveal-child border-b border-border/60 pb-4 last:border-b-0 last:pb-0">
             <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{category.title}</h3>
             <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (

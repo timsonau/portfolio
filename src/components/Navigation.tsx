@@ -5,7 +5,7 @@ interface NavigationProps {
 const NAV_ITEMS = [
   { id: "about", label: "ABOUT" },
   { id: "experience", label: "EXPERIENCE" },
-  { id: "articles", label: "MY ARTICLES" },
+  { id: "articles", label: "ARTICLES" },
   { id: "skills", label: "SKILLS" },
   { id: "education", label: "EDUCATION" },
 ] as const;
@@ -13,13 +13,16 @@ const NAV_ITEMS = [
 export default function Navigation({ activeSection }: NavigationProps) {
   return (
     <nav className="hidden lg:flex flex-col gap-3" aria-label="In-page navigation">
+      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+        Command Map
+      </p>
       {NAV_ITEMS.map(({ id, label }) => {
         const isActive = activeSection === id;
         return (
           <a
             key={id}
             href={`#${id}`}
-            className="group flex items-center gap-3 rounded-xl px-2 py-1 transition-all duration-300 hover:bg-background/60"
+            className="group flex items-center gap-3 rounded-md border border-transparent px-2 py-1.5 transition-all duration-300 hover:border-border/70 hover:bg-background/60"
             aria-current={isActive ? "location" : undefined}
           >
             <span

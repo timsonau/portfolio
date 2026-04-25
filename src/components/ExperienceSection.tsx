@@ -9,14 +9,18 @@ const EXPERIENCES = [
     companyUrl: "https://www.geico.com",
     description: "Promoted to senior engineer to lead enterprise event tracking infrastructure processing 5,000+ req/s with 99.99% uptime. Architecting MCP-based services enabling AI agents to query behavioral data in real time.",
     technologies: ["Go", "Kubernetes", "Kafka", "MCP", "Snowflake"],
+    scope: "Enterprise telemetry platform",
+    impact: "$4M+ annual savings unlocked",
   },
   {
-    dateRange: "02/2025 \u2013 Present",
+    dateRange: "02/2025 \u2013 02/2026",
     title: "Software Engineer II",
     company: "GEICO",
     companyUrl: "https://www.geico.com",
     description: "Built the event tracking system from scratch in Go \u2013 replaced a vendor solution, saving $4M+ annually. Led the Swift SDK powering analytics across GEICO\u2019s iOS app.",
     technologies: ["Go", "Kubernetes", "Swift", "React"],
+    scope: "Tracking ingestion + mobile SDK",
+    impact: "5k+ req/s pipeline throughput",
   },
   {
     dateRange: "03/2024 \u2013 02/2025",
@@ -25,6 +29,8 @@ const EXPERIENCES = [
     companyUrl: "https://www.geico.com",
     description: "Developed internal article search platform using Elasticsearch and a responsive UI in React, enabling fast access to indexed content in less than 150 ms ",
     technologies: ["React", "Elasticsearch"],
+    scope: "Search platform for internal docs",
+    impact: "<150ms query latency",
   },
   {
     dateRange: "05/2021 \u2013 02/2024",
@@ -33,6 +39,8 @@ const EXPERIENCES = [
     companyUrl: "https://www.udatechnologies.com",
     description: "Led the OnPoint Proposal feature showcased at International Builders Show 2023. Hardened AWS infrastructure and built proactive monitoring pipelines.",
     technologies: ["AWS", "Grafana", "VB.NET", "JavaScript"],
+    scope: "SaaS feature delivery + reliability",
+    impact: "Flagship launch at IBS 2023",
   },
 ] as const;
 
@@ -40,6 +48,11 @@ export default function ExperienceSection() {
   return (
     <section id="experience" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Work experience">
       <SectionHeading>Experience</SectionHeading>
+      <div className="mb-3 grid grid-cols-3 gap-2 rounded-md border border-border/70 bg-card/40 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+        <span>Role</span>
+        <span>Scope</span>
+        <span>Impact</span>
+      </div>
       <div className="group/list flex flex-col gap-5 stagger" data-reveal>
         {EXPERIENCES.map((exp) => (
           <ExperienceCard key={`${exp.company}-${exp.dateRange}`} {...exp} />

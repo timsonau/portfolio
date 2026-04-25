@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import SkillsSection from "./components/SkillsSection";
 import SocialLinks from "./components/SocialLinks";
-import ThemeToggle from "./components/ThemeToggle";
 import useActiveSection from "./hooks/useActiveSection";
 import useMouseGlow from "./hooks/useMouseGlow";
 
@@ -65,7 +64,7 @@ export default function Portfolio() {
         {/* Left: Sticky Sidebar */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col gap-4">
-            <div className="flex items-start justify-between hero-enter hero-delay-1">
+            <div className="flex items-start hero-enter hero-delay-1">
               <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[1.3rem] border border-border transition-all duration-500 hover:shadow-lg">
                 <img
                   src= {`${import.meta.env.BASE_URL}images/grad-pic.jpg`}
@@ -74,7 +73,6 @@ export default function Portfolio() {
                   loading="eager"
                 />
               </div>
-              <ThemeToggle />
             </div>
 
             <h1 className="editorial-title hero-enter hero-delay-2 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
@@ -89,9 +87,6 @@ export default function Portfolio() {
               Distributed systems, cloud infrastructure, and AI-powered tooling.
             </p>
 
-            <p className="hero-enter hero-delay-5 max-w-sm text-xs uppercase tracking-[0.16em] text-muted-foreground">
-              Command deck UI, neon telemetry, game-grade engineering.
-            </p>
 
             <div className="hero-enter hero-delay-5 mt-10 section-frame">
               <Navigation activeSection={activeSection} />

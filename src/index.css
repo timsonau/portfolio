@@ -19,22 +19,6 @@
   --highlight: #8f7dff;
 }
 
-/* Dark theme */
-.dark {
-  --background: #03060f;
-  --foreground: #dce8ff;
-  --muted: #0a1120;
-  --muted-foreground: #7f93b9;
-  --accent: #35dbff;
-  --accent-foreground: #02111a;
-  --border: #1b2a4a;
-  --card: #081120;
-  --card-foreground: #c8dbff;
-  --glow-color: rgba(53, 219, 255, 0.14);
-  --selection-bg: rgba(143, 125, 255, 0.22);
-  --highlight: #a693ff;
-}
-
 * {
   margin: 0;
   padding: 0;

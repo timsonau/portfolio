@@ -7,6 +7,8 @@ interface ExperienceCardProps {
   companyUrl?: string;
   description: string;
   technologies: readonly string[];
+  scope: string;
+  impact: string;
 }
 
 export default function ExperienceCard({
@@ -16,13 +18,20 @@ export default function ExperienceCard({
   companyUrl,
   description,
   technologies,
+  scope,
+  impact,
 }: ExperienceCardProps) {
   return (
-    <article className="editorial-card reveal-child group relative grid p-4 transition-all duration-300 lg:grid-cols-8 lg:gap-4 lg:hover:-translate-y-0.5 lg:hover:!opacity-100 lg:group-hover/list:opacity-55">
-      <header className="z-10 mb-2 mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground lg:col-span-2">
-        {dateRange}
-      </header>
-      <div className="z-10 lg:col-span-6">
+    <article className="editorial-card reveal-child group relative p-4 transition-all duration-300 lg:hover:!opacity-100 lg:group-hover/list:opacity-55">
+      <div className="grid gap-2 lg:grid-cols-3">
+        <header className="z-10 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          {dateRange}
+        </header>
+        <p className="text-xs text-muted-foreground">{scope}</p>
+        <p className="text-xs text-muted-foreground">{impact}</p>
+      </div>
+
+      <div className="mt-3 border-t border-border/70 pt-3">
         <h3 className="font-medium leading-snug">
           {companyUrl ? (
             <a
