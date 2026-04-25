@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
 import SkillsSection from "./components/SkillsSection";
 import SocialLinks from "./components/SocialLinks";
-import ThemeToggle from "./components/ThemeToggle";
 import useActiveSection from "./hooks/useActiveSection";
 import useMouseGlow from "./hooks/useMouseGlow";
 
@@ -61,12 +60,12 @@ export default function Portfolio() {
         aria-hidden="true"
       />
 
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:flex lg:justify-between lg:gap-4 lg:px-24 lg:py-0">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:flex lg:justify-between lg:gap-8 lg:px-24 lg:py-0">
         {/* Left: Sticky Sidebar */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col gap-4">
-            <div className="flex items-start justify-between hero-enter hero-delay-1">
-              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-full border border-border transition-all duration-500 hover:shadow-lg">
+            <div className="flex items-start hero-enter hero-delay-1">
+              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[1.3rem] border border-border transition-all duration-500 hover:shadow-lg">
                 <img
                   src= {`${import.meta.env.BASE_URL}images/grad-pic.jpg`}
                   alt="Tim Son"
@@ -74,10 +73,9 @@ export default function Portfolio() {
                   loading="eager"
                 />
               </div>
-              <ThemeToggle />
             </div>
 
-            <h1 className="hero-enter hero-delay-2 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            <h1 className="editorial-title hero-enter hero-delay-2 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
               <a href="/portfolio" className="transition-colors duration-300 hover:text-highlight">Tim Son</a>
             </h1>
 
@@ -85,11 +83,12 @@ export default function Portfolio() {
               <b>Senior Software Engineer</b> @ GEICO 
             </h2>
 
-            <p className="hero-enter hero-delay-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
+            <p className="hero-enter hero-delay-4 max-w-md text-sm leading-relaxed text-muted-foreground">
               Distributed systems, cloud infrastructure, and AI-powered tooling.
             </p>
 
-            <div className="hero-enter hero-delay-5 mt-12">
+
+            <div className="hero-enter hero-delay-5 mt-10 section-frame">
               <Navigation activeSection={activeSection} />
             </div>
           </div>
@@ -100,7 +99,7 @@ export default function Portfolio() {
         </header>
 
         {/* Right: Scrollable Content */}
-        <main className="flex flex-col gap-28 pt-24 lg:w-1/2 lg:py-24">
+        <main className="flex flex-col gap-20 pt-20 lg:w-1/2 lg:py-24">
           <AboutSection />
           <ExperienceSection />
           <ArticlesSection />

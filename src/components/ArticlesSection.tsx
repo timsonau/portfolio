@@ -27,7 +27,7 @@ export default function ArticlesSection() {
     <section id="articles" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Blog articles">
       <SectionHeading>My Articles</SectionHeading>
       {loading && (
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-5">
           <ArticleSkeleton />
           <ArticleSkeleton />
         </div>
@@ -47,7 +47,7 @@ export default function ArticlesSection() {
         </p>
       )}
       {!loading && !error && articles.length > 0 && (
-        <div className="group/list flex flex-col gap-10 stagger" data-reveal>
+        <div className="group/list flex flex-col gap-5 stagger" data-reveal>
           {articles.map((article) => (
             <ArticleCard key={article.link} {...article} />
           ))}

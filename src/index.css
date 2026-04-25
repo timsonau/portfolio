@@ -1,36 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Light theme (default) */
-:root {
-  --background: #fafafa;
-  --foreground: #0a0a0a;
-  --muted: #e5e5e5;
-  --muted-foreground: #737373;
-  --accent: #0a0a0a;
-  --accent-foreground: #404040;
-  --border: #e5e5e5;
-  --card: #ffffff;
-  --card-foreground: #404040;
-  --glow-color: rgba(10, 10, 10, 0.03);
-  --selection-bg: rgba(10, 10, 10, 0.08);
-  --highlight: #2563eb;
-}
 
-/* Dark theme */
-.dark {
-  --background: #09090b;
-  --foreground: #fafafa;
-  --muted: #1c1c1e;
-  --muted-foreground: #71717a;
-  --accent: #fafafa;
-  --accent-foreground: #a1a1aa;
-  --border: #27272a;
-  --card: #111113;
-  --card-foreground: #d4d4d8;
-  --glow-color: rgba(250, 250, 250, 0.03);
-  --selection-bg: rgba(250, 250, 250, 0.1);
-  --highlight: #60a5fa;
+/* Visual direction: spaceship game HUD */
+:root {
+  --background: #050914;
+  --foreground: #e6f0ff;
+  --muted: #0e1629;
+  --muted-foreground: #8ea3c8;
+  --accent: #46e0ff;
+  --accent-foreground: #03131b;
+  --border: #1f3257;
+  --card: #0b1324;
+  --card-foreground: #d3e4ff;
+  --glow-color: rgba(70, 224, 255, 0.12);
+  --selection-bg: rgba(70, 224, 255, 0.28);
+  --highlight: #8f7dff;
 }
 
 * {
@@ -46,10 +32,15 @@ html {
 }
 
 body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family: "Space Grotesk", "Inter", system-ui, -apple-system, sans-serif;
   background-color: var(--background);
   color: var(--foreground);
-  line-height: 1.6;
+  background-image:
+    radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--accent) 17%, transparent), transparent 34%),
+    radial-gradient(circle at 90% 0%, color-mix(in srgb, var(--highlight) 17%, transparent), transparent 32%),
+    linear-gradient(160deg, #050914 0%, #040812 42%, #070f1c 100%);
+  line-height: 1.65;
+  letter-spacing: 0.005em;
   transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -138,5 +129,39 @@ body {
 .stagger.revealed .reveal-child:nth-child(4) { transition-delay: 0.24s; }
 .stagger.revealed .reveal-child:nth-child(5) { transition-delay: 0.32s; }
 .stagger.revealed .reveal-child:nth-child(6) { transition-delay: 0.40s; }
+
+.editorial-title {
+  font-family: "Chakra Petch", "Space Grotesk", sans-serif;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.section-frame {
+  border: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--card) 95%, transparent), color-mix(in srgb, var(--muted) 65%, transparent));
+  border-radius: 14px;
+  padding: 1.1rem;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent),
+    0 0 28px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.editorial-card {
+  border: 1px solid color-mix(in srgb, var(--border) 88%, transparent);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--card) 92%, transparent), color-mix(in srgb, var(--muted) 62%, transparent));
+  border-radius: 14px;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent),
+    0 10px 24px color-mix(in srgb, #02050d 90%, transparent);
+}
+
+.editorial-chip {
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--muted) 84%, var(--background));
+  border: 1px solid color-mix(in srgb, var(--accent) 34%, var(--border));
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent);
+}
 
 
