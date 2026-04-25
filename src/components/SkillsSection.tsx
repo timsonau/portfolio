@@ -12,13 +12,13 @@ export default function SkillsSection() {
   return (
     <section id="skills" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Technical skills">
       <SectionHeading>Skills</SectionHeading>
-      <div className="flex flex-col gap-6 stagger" data-reveal>
+      <div className="section-frame flex flex-col gap-6 stagger" data-reveal>
         {SKILL_CATEGORIES.map((category) => (
           <div key={category.title} className="reveal-child">
-            <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">{category.title}</h3>
-            <div className="flex flex-wrap gap-1.5">
+            <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{category.title}</h3>
+            <div className="flex flex-wrap gap-2">
               {category.skills.map((skill) => (
-                <span key={skill} className="inline-flex items-center rounded-full border border-border px-2.5 py-1 text-[11px] font-medium text-card-foreground transition-all duration-300 hover:border-foreground/20 hover:text-foreground">
+                <span key={skill} className="editorial-chip inline-flex items-center px-2.5 py-1 text-[11px] font-medium text-card-foreground transition-all duration-300 hover:border-accent/35 hover:text-foreground">
                   {skill}
                 </span>
               ))}
