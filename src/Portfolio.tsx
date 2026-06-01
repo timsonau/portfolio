@@ -53,7 +53,7 @@ export default function Portfolio() {
     <div className="relative">
       {/* Cursor glow */}
       <div
-        className="pointer-events-none fixed inset-0 z-30 hidden transition-opacity duration-500 lg:block"
+        className="cursor-glow pointer-events-none fixed inset-0 z-30 hidden transition-opacity duration-500 lg:block"
         style={{
           background: `radial-gradient(800px circle at ${x}px ${y}px, var(--glow-color), transparent 70%)`,
         }}
@@ -65,13 +65,15 @@ export default function Portfolio() {
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col gap-4">
             <div className="flex items-start hero-enter hero-delay-1">
-              <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-[1.3rem] border border-border transition-all duration-500 hover:shadow-lg">
-                <img
-                  src= {`${import.meta.env.BASE_URL}images/grad-pic.jpg`}
-                  alt="Tim Son"
-                  className="h-full w-full object-cover object-top"
-                  loading="eager"
-                />
+              <div className="xkcd-frame relative h-20 w-20 shrink-0 transition-all duration-500">
+                <div className="h-full w-full overflow-hidden">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/comic-tim.png`}
+                    alt="Tim Son"
+                    className="h-full w-full object-cover object-top"
+                    loading="eager"
+                  />
+                </div>
               </div>
             </div>
 

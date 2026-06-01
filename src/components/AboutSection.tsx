@@ -6,9 +6,9 @@ export default function AboutSection() {
       <SectionHeading>About</SectionHeading>
       <div className="editorial-card stagger p-5" data-reveal>
         <div className="reveal-child grid gap-2 border-b border-border/70 pb-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground lg:grid-cols-3">
-          <span>Mission</span>
-          <span>Operating Model</span>
-          <span>Primary Systems</span>
+          <span>Goal</span>
+          <span>Approach</span>
+          <span>Focus</span>
         </div>
         <div className="reveal-child mt-3 grid gap-2 text-sm lg:grid-cols-3">
           <p className="text-muted-foreground">Build high-signal platforms that remain reliable under production-scale load.</p>

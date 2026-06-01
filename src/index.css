@@ -164,4 +164,151 @@ body {
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 14%, transparent);
 }
 
+/* ===== XKCD THEME (squiggly SVG borders + border-shape enhancement) ===== */
+body.theme-xkcd {
+  --background: #ffffff;
+  --foreground: #000000;
+  --muted: #f4f4f4;
+  --muted-foreground: #333333;
+  --accent: #96bde4;
+  --accent-foreground: #000000;
+  --border: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --glow-color: transparent;
+  --selection-bg: rgba(150, 189, 228, 0.45);
+  --highlight: #0000cc;
+  --sketch-inset: -4px;
+  --sketch-uri-a: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.8%22%20vector-effect%3D%22non-scaling-stroke%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20d%3D%22M%203%2C2.5%20C%2018%2C2%2035%2C3%2050%2C2.2%20S%2082%2C2.5%2097%2C2.8%20C%2098.5%2C18%2099%2C35%2098.2%2C50%20S%2098.5%2C82%2097.5%2C97.5%20C%2082%2C98.8%2065%2C99%2050%2C98.3%20S%2018%2C98.5%202.5%2C97.8%20C%201.5%2C82%202%2C65%202.3%2C50%20S%201.8%2C18%203%2C2.5%20Z%22%2F%3E%3C%2Fsvg%3E");
+  --sketch-uri-b: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.8%22%20vector-effect%3D%22non-scaling-stroke%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20d%3D%22M%202.8%2C2.2%20C%2020%2C1.5%2040%2C3%2055%2C2.5%20S%2088%2C2%2097.5%2C3%20C%2099%2C22%2098%2C42%2098.5%2C55%20S%2099%2C88%2097%2C97.2%20C%2078%2C99%2058%2C98%2045%2C98.8%20S%2012%2C99%202.2%2C97.5%20C%201%2C78%202.5%2C58%201.8%2C45%20S%201.5%2C12%202.8%2C2.2%20Z%22%2F%3E%3C%2Fsvg%3E");
+  --sketch-uri-c: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.8%22%20vector-effect%3D%22non-scaling-stroke%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20d%3D%22M%203.2%2C2.8%20C%2022%2C2.2%2038%2C3.2%2052%2C2.4%20S%2080%2C2.8%2096.8%2C2.6%20C%2098.2%2C20%2098.8%2C38%2097.6%2C52%20S%2098.2%2C80%2097%2C96.8%20C%2080%2C98.2%2062%2C98.8%2048%2C97.6%20S%2020%2C98.2%203.2%2C97%20C%202%2C80%202.6%2C62%203.4%2C48%20S%202%2C20%203.2%2C2.8%20Z%22%2F%3E%3C%2Fsvg%3E");
+  --sketch-uri-chip: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.8%22%20vector-effect%3D%22non-scaling-stroke%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20d%3D%22M%204%2C3%20C%2030%2C2.5%2055%2C3.2%2075%2C2.8%20S%2095%2C3%2096%2C3.2%20C%2097%2C30%2096.5%2C55%2097%2C75%20S%2096.5%2C95%2096%2C96%20C%2070%2C97%2045%2C96.5%2025%2C97%20S%205%2C96.5%204%2C96%20C%203%2C70%203.5%2C45%203%2C25%20S%203.5%2C5%204%2C3%20Z%22%2F%3E%3C%2Fsvg%3E");
+  --sketch-uri-rule: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%206%22%20preserveAspectRatio%3D%22none%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23000%22%20stroke-width%3D%221.8%22%20vector-effect%3D%22non-scaling-stroke%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20d%3D%22M%201%2C3%20Q%2025%2C2.2%2050%2C3%20T%2099%2C2.8%22%2F%3E%3C%2Fsvg%3E");
+
+  font-family: "Patrick Hand", "Comic Sans MS", cursive;
+  background-color: var(--background);
+  background-image: none;
+  letter-spacing: 0.01em;
+}
+
+body.theme-xkcd .cursor-glow {
+  display: none !important;
+}
+
+body.theme-xkcd .hero-enter,
+body.theme-xkcd [data-reveal] {
+  filter: none;
+}
+
+body.theme-xkcd .editorial-title {
+  font-family: "Patrick Hand", "Comic Sans MS", cursive;
+  text-transform: none;
+  letter-spacing: 0.02em;
+}
+
+body.theme-xkcd .section-frame,
+body.theme-xkcd .editorial-card,
+body.theme-xkcd .editorial-chip,
+body.theme-xkcd .xkcd-frame,
+body.theme-xkcd #skills span.inline-flex,
+body.theme-xkcd #education span.inline-flex {
+  position: relative;
+  overflow: visible;
+  border: none;
+  border-radius: 0;
+  background: var(--card);
+  box-shadow: none;
+  isolation: isolate;
+}
+
+body.theme-xkcd .section-frame {
+  padding: 1.1rem;
+}
+
+body.theme-xkcd .editorial-chip,
+body.theme-xkcd #skills span.inline-flex,
+body.theme-xkcd #education span.inline-flex {
+  background: var(--muted);
+}
+
+body.theme-xkcd .section-frame::after,
+body.theme-xkcd .editorial-card::after,
+body.theme-xkcd .editorial-chip::after,
+body.theme-xkcd .xkcd-frame::after,
+body.theme-xkcd #skills span.inline-flex::after,
+body.theme-xkcd #education span.inline-flex::after {
+  content: "";
+  position: absolute;
+  inset: var(--sketch-inset);
+  pointer-events: none;
+  z-index: 4;
+  background-image: var(--sketch-uri-a);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+body.theme-xkcd .editorial-card:nth-child(3n + 2)::after {
+  background-image: var(--sketch-uri-b);
+}
+
+body.theme-xkcd .editorial-card:nth-child(3n)::after {
+  background-image: var(--sketch-uri-c);
+}
+
+body.theme-xkcd .editorial-chip::after,
+body.theme-xkcd #skills span.inline-flex::after,
+body.theme-xkcd #education span.inline-flex::after {
+  inset: -2px;
+  background-image: var(--sketch-uri-chip);
+}
+
+body.theme-xkcd .xkcd-frame::after {
+  inset: -3px;
+}
+
+body.theme-xkcd a:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+body.theme-xkcd nav a {
+  border: none !important;
+  background: transparent !important;
+}
+
+body.theme-xkcd nav a span:first-child {
+  background: var(--border) !important;
+  height: 2px !important;
+  border-radius: 0 !important;
+}
+
+body.theme-xkcd .sticky.top-0 {
+  background: color-mix(in srgb, var(--background) 92%, transparent);
+  border-bottom: none;
+  backdrop-filter: none;
+}
+
+body.theme-xkcd .sticky.top-0::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  pointer-events: none;
+  background-image: var(--sketch-uri-rule);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+body.theme-xkcd .rounded-xl,
+body.theme-xkcd .rounded-full {
+  border-radius: 0;
+}
+
+body.theme-xkcd ::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 0;
+}
 

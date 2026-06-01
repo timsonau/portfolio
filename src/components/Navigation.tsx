@@ -14,7 +14,7 @@ export default function Navigation({ activeSection }: NavigationProps) {
   return (
     <nav className="hidden lg:flex flex-col gap-3" aria-label="In-page navigation">
       <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-        Command Map
+        Sections
       </p>
       {NAV_ITEMS.map(({ id, label }) => {
         const isActive = activeSection === id;
