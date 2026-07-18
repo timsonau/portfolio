@@ -3,7 +3,17 @@ import SectionHeading from "./SectionHeading";
 
 const EXPERIENCES = [
   {
-    dateRange: "02/2026 \u2013 Present",
+    dateRange: "06/2026 \u2013 Present",
+    title: "Software Engineer",
+    company: "McMaster-Carr",
+    companyUrl: "https://www.mcmaster.com",
+    description: "Working on the AI team building AI-powered chat experiences for customers.",
+    technologies: ["AI"],
+    scope: "AI chat experience",
+    impact: "New AI chat product",
+  },
+  {
+    dateRange: "02/2026 \u2013 06/2026",
     title: "Senior Software Engineer",
     company: "GEICO",
     companyUrl: "https://www.geico.com",
