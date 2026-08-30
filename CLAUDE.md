@@ -33,3 +33,13 @@ Pushing to `main` triggers `.github/workflows/pages.yaml`, which runs `npm ci &&
 - `ArticlesSection` fetches the "My Articles" list live at runtime via `useMediumArticles`, which pulls Tim's Medium RSS feed through `api.rss2json.com` (no build-time content). Loading/error/empty states are all handled in `ArticlesSection.tsx`.
 - Theming is CSS-variable based, defined in `src/index.css`: a `:root` "spaceship HUD" dark theme, and a `body.theme-xkcd` override block (comic/sketch look, hand-drawn SVG borders) that is toggled by hardcoding `class="theme-xkcd"` on `<body>` in `index.html` — there is no in-app theme switcher/JS toggle currently wired up. If asked to add theme switching, this is the mechanism to hook into.
 - Tailwind's `theme.extend.colors` in `tailwind.config.js` maps utility classes (`bg-background`, `text-foreground`, `text-muted-foreground`, `text-highlight`, etc.) straight to these CSS variables, so components style themselves via Tailwind classes rather than raw CSS.
+
+## Agent skills
+
+### Issue tracker
+
+Issues are tracked in GitHub Issues (github.com/timsonau/portfolio) via the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context: `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
