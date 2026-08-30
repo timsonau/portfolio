@@ -8,11 +8,9 @@ import Navigation from "./components/Navigation";
 import SkillsSection from "./components/SkillsSection";
 import SocialLinks from "./components/SocialLinks";
 import useActiveSection from "./hooks/useActiveSection";
-import useMouseGlow from "./hooks/useMouseGlow";
 
 export default function Portfolio() {
   const activeSection = useActiveSection();
-  const { x, y } = useMouseGlow();
 
   const observeReveals = useCallback(() => {
     const elements = document.querySelectorAll("[data-reveal]:not(.revealed)");
@@ -51,21 +49,12 @@ export default function Portfolio() {
 
   return (
     <div className="relative">
-      {/* Cursor glow */}
-      <div
-        className="cursor-glow pointer-events-none fixed inset-0 z-30 hidden transition-opacity duration-500 lg:block"
-        style={{
-          background: `radial-gradient(800px circle at ${x}px ${y}px, var(--glow-color), transparent 70%)`,
-        }}
-        aria-hidden="true"
-      />
-
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:flex lg:justify-between lg:gap-8 lg:px-24 lg:py-0">
         {/* Left: Sticky Sidebar */}
         <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div className="flex flex-col gap-4">
             <div className="flex items-start hero-enter hero-delay-1">
-              <div className="xkcd-frame relative h-20 w-20 shrink-0 transition-all duration-500">
+              <div className="photo-frame relative h-20 w-20 shrink-0 transition-all duration-500">
                 <div className="h-full w-full overflow-hidden">
                   <img
                     src={`${import.meta.env.BASE_URL}images/comic-tim.png`}
@@ -90,7 +79,7 @@ export default function Portfolio() {
             </p>
 
 
-            <div className="hero-enter hero-delay-5 mt-10 section-frame">
+            <div className="hero-enter hero-delay-5 mt-10 hidden section-frame lg:block">
               <Navigation activeSection={activeSection} />
             </div>
           </div>

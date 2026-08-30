@@ -18,6 +18,7 @@ export default {
       fontFamily: {
         sans: ["Inter", "system-ui", "-apple-system", "sans-serif"],
         mono: ["JetBrains Mono", "monospace"],
+        serif: ["Fraunces", "Georgia", "Times New Roman", "serif"],
       },
     },
   },
