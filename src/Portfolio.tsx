@@ -4,9 +4,9 @@ import ArticlesSection from "./components/ArticlesSection";
 import EducationSection from "./components/EducationSection";
 import ExperienceSection from "./components/ExperienceSection";
 import Footer from "./components/Footer";
+import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
 import SkillsSection from "./components/SkillsSection";
-import SocialLinks from "./components/SocialLinks";
 import useActiveSection from "./hooks/useActiveSection";
 
 export default function Portfolio() {
@@ -48,57 +48,17 @@ export default function Portfolio() {
   }, [observeReveals]);
 
   return (
-    <div className="relative">
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:flex lg:justify-between lg:gap-8 lg:px-24 lg:py-0">
-        {/* Left: Sticky Sidebar */}
-        <header className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-          <div className="flex flex-col gap-4">
-            <div className="flex items-start hero-enter hero-delay-1">
-              <div className="photo-frame relative h-20 w-20 shrink-0 transition-all duration-500">
-                <div className="h-full w-full overflow-hidden">
-                  <img
-                    src={`${import.meta.env.BASE_URL}images/comic-tim.png`}
-                    alt="Tim Son"
-                    className="h-full w-full object-cover object-top"
-                    loading="eager"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <h1 className="editorial-title hero-enter hero-delay-2 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              <a href="/portfolio" className="transition-colors duration-300 hover:text-highlight">Tim Son</a>
-            </h1>
-
-            <h2 className="hero-enter hero-delay-3 text-lg font-medium text-muted-foreground">
-              <b>Software Engineer</b> @ McMaster-Carr
-            </h2>
-
-            <p className="hero-enter hero-delay-4 max-w-md text-sm leading-relaxed text-muted-foreground">
-              Distributed systems, cloud infrastructure, and AI-powered tooling.
-            </p>
-
-
-            <div className="hero-enter hero-delay-5 mt-10 hidden section-frame lg:block">
-              <Navigation activeSection={activeSection} />
-            </div>
-          </div>
-
-          <div className="hero-enter hero-delay-6 mt-8 lg:mt-0">
-            <SocialLinks />
-          </div>
-        </header>
-
-        {/* Right: Scrollable Content */}
-        <main className="flex flex-col gap-20 pt-20 lg:w-1/2 lg:py-24">
-          <AboutSection />
-          <ExperienceSection />
-          <ArticlesSection />
-          <SkillsSection />
-          <EducationSection />
-          <Footer />
-        </main>
-      </div>
+    <div id="top" className="relative">
+      <Navigation activeSection={activeSection} />
+      <Hero />
+      <main className="mx-auto flex max-w-3xl flex-col gap-20 px-6 pb-32 pt-16 sm:px-8 sm:pt-20 md:gap-28">
+        <AboutSection />
+        <ExperienceSection />
+        <ArticlesSection />
+        <SkillsSection />
+        <EducationSection />
+      </main>
+      <Footer />
     </div>
   );
 }

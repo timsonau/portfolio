@@ -3,42 +3,46 @@ interface NavigationProps {
 }
 
 const NAV_ITEMS = [
-  { id: "about", label: "ABOUT" },
-  { id: "experience", label: "EXPERIENCE" },
-  { id: "articles", label: "ARTICLES" },
-  { id: "skills", label: "SKILLS" },
-  { id: "education", label: "EDUCATION" },
+  { id: "about", label: "About" },
+  { id: "experience", label: "Experience" },
+  { id: "articles", label: "Writing" },
+  { id: "skills", label: "Skills" },
+  { id: "education", label: "Education" },
 ] as const;
 
 export default function Navigation({ activeSection }: NavigationProps) {
   return (
-    <nav className="hidden lg:flex flex-col gap-3" aria-label="In-page navigation">
-      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-        Sections
-      </p>
-      {NAV_ITEMS.map(({ id, label }) => {
-        const isActive = activeSection === id;
-        return (
-          <a
-            key={id}
-            href={`#${id}`}
-            className="group flex items-center gap-3 rounded-md border border-transparent px-2 py-1.5 transition-all duration-300 hover:border-border/70 hover:bg-background/60"
-            aria-current={isActive ? "location" : undefined}
-          >
-            <span
-              className="h-px rounded-full bg-accent transition-all duration-500 ease-out"
-              style={{ width: isActive ? 42 : 18, opacity: isActive ? 0.9 : 0.3 }}
-            />
-            <span
-              className={`text-[11px] font-semibold tracking-[0.16em] transition-all duration-300 ${
-                isActive ? "text-foreground" : "text-muted-foreground group-hover:text-foreground/90"
-              }`}
-            >
-              {label}
-            </span>
-          </a>
-        );
-      })}
+    <nav
+      className="sticky top-0 z-30 border-b border-border/70 bg-background"
+      aria-label="In-page navigation"
+    >
+      <div className="mx-auto flex max-w-3xl items-center gap-6 px-6 py-4 sm:px-8">
+        <a
+          href="#top"
+          className="editorial-title shrink-0 text-sm font-semibold tracking-[0.06em] text-foreground transition-colors duration-300 hover:text-highlight"
+        >
+          TS
+        </a>
+        <div className="nav-fade flex shrink-0 gap-5 overflow-x-auto sm:gap-7">
+          {NAV_ITEMS.map(({ id, label }) => {
+            const isActive = activeSection === id;
+            return (
+              <a
+                key={id}
+                href={`#${id}`}
+                aria-current={isActive ? "location" : undefined}
+                className={`whitespace-nowrap border-b-2 pb-0.5 text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors duration-300 ${
+                  isActive
+                    ? "border-accent text-foreground"
+                    : "border-transparent text-muted-foreground hover:text-foreground/90"
+                }`}
+              >
+                {label}
+              </a>
+            );
+          })}
+        </div>
+      </div>
     </nav>
   );
 }

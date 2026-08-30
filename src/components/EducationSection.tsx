@@ -6,7 +6,7 @@ const COLLEGE_TAGS = [
 export default function EducationSection() {
   return (
     <section id="education" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Education">
-      <SectionHeading>Education</SectionHeading>
+      <SectionHeading index="05">Education</SectionHeading>
       <div className="flex flex-col gap-8 stagger" data-reveal>
         <div className="editorial-card reveal-child group relative grid p-4 lg:grid-cols-8 lg:gap-4">
           <div className="z-10 mb-1 mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground lg:col-span-2">08/2019 - 05/2023</div>

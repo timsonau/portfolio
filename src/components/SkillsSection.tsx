@@ -11,7 +11,7 @@ const SKILL_CATEGORIES = [
 export default function SkillsSection() {
   return (
     <section id="skills" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Technical skills">
-      <SectionHeading>Skills</SectionHeading>
+      <SectionHeading index="04">Skills</SectionHeading>
       <div className="section-frame flex flex-col gap-6 stagger" data-reveal>
         {SKILL_CATEGORIES.map((category) => (
           <div key={category.title} className="reveal-child border-b border-border/60 pb-4 last:border-b-0 last:pb-0">

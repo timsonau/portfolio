@@ -3,7 +3,7 @@ import SectionHeading from "./SectionHeading";
 export default function AboutSection() {
   return (
     <section id="about" className="scroll-mt-24 lg:scroll-mt-0" aria-label="About me">
-      <SectionHeading>About</SectionHeading>
+      <SectionHeading index="01">About</SectionHeading>
       <div className="editorial-card stagger p-5" data-reveal>
         <div className="reveal-child grid gap-2 border-b border-border/70 pb-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-muted-foreground lg:grid-cols-3">
           <span>Goal</span>

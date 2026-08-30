@@ -57,7 +57,7 @@ const EXPERIENCES = [
 export default function ExperienceSection() {
   return (
     <section id="experience" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Work experience">
-      <SectionHeading>Experience</SectionHeading>
+      <SectionHeading index="02">Experience</SectionHeading>
       <div className="mb-3 grid grid-cols-3 gap-2 rounded-md border border-border/70 bg-card/40 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
         <span>Role</span>
         <span>Scope</span>
