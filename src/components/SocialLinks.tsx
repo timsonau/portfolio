@@ -27,7 +27,7 @@ export default function SocialLinks() {
           href={href}
           target={href.startsWith("mailto") ? undefined : "_blank"}
           rel={href.startsWith("mailto") ? undefined : "noopener noreferrer"}
-          className="rounded-[0.9rem] border border-transparent p-2 text-muted-foreground transition-all duration-300 hover:border-border hover:bg-card/70 hover:text-accent"
+          className="rounded-md border border-transparent p-2 text-muted-foreground transition-all duration-300 hover:border-border hover:bg-card/70 hover:text-accent"
           aria-label={label}
           role="listitem"
         >

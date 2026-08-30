@@ -6,14 +6,14 @@ function ArticleSkeleton() {
   return (
     <div className="grid animate-pulse lg:grid-cols-8 lg:gap-4">
       <div className="mb-3 lg:col-span-2 lg:mb-0">
-        <div className="aspect-video w-full rounded-lg bg-muted" />
+        <div className="aspect-video w-full rounded-md bg-muted" />
       </div>
       <div className="lg:col-span-6">
-        <div className="h-5 w-3/4 rounded bg-muted" />
-        <div className="mt-2 h-3 w-1/4 rounded bg-muted" />
+        <div className="h-5 w-3/4 rounded-sm bg-muted" />
+        <div className="mt-2 h-3 w-1/4 rounded-sm bg-muted" />
         <div className="mt-3 flex gap-1.5">
-          <div className="h-5 w-16 rounded-full bg-muted" />
-          <div className="h-5 w-12 rounded-full bg-muted" />
+          <div className="h-5 w-16 rounded-sm bg-muted" />
+          <div className="h-5 w-12 rounded-sm bg-muted" />
         </div>
       </div>
     </div>
