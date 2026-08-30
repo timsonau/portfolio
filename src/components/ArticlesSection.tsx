@@ -22,7 +22,7 @@ export default function ArticlesSection() {
 
   return (
     <section id="articles" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Blog articles">
-      <SectionHeading index="03">Writing</SectionHeading>
+      <SectionHeading index="02">Writing</SectionHeading>
       {loading && (
         <div className="flex flex-col">
           <ArticleSkeleton />

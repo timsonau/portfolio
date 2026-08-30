@@ -1,5 +1,4 @@
 import { useEffect, useCallback } from "react";
-import AboutSection from "./components/AboutSection";
 import ArticlesSection from "./components/ArticlesSection";
 import EducationSection from "./components/EducationSection";
 import ExperienceSection from "./components/ExperienceSection";
@@ -52,7 +51,6 @@ export default function Portfolio() {
       <Navigation activeSection={activeSection} />
       <Hero />
       <main className="mx-auto flex max-w-3xl flex-col gap-20 px-6 pb-32 pt-16 sm:px-8 sm:pt-20 md:gap-28">
-        <AboutSection />
         <ExperienceSection />
         <ArticlesSection />
         <SkillsSection />

@@ -3,7 +3,6 @@ interface NavigationProps {
 }
 
 const NAV_ITEMS = [
-  { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "articles", label: "Writing" },
   { id: "skills", label: "Skills" },

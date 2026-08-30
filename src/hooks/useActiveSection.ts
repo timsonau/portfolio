@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
-const SECTION_IDS = ["about", "experience", "articles", "skills", "education"] as const;
+const SECTION_IDS = ["experience", "articles", "skills", "education"] as const;
 type SectionId = (typeof SECTION_IDS)[number];
 
 const ACTIVATION_Y = 140; // px from top where we decide "this section is active"
 const SCROLL_END_DEBOUNCE_MS = 120;
 
 export default function useActiveSection(): string {
-  const [activeSection, setActiveSection] = useState<SectionId>("about");
-  const activeRef = useRef<SectionId>("about");
+  const [activeSection, setActiveSection] = useState<SectionId>("experience");
+  const activeRef = useRef<SectionId>("experience");
 
   const isProgrammaticScrollRef = useRef(false);
   const scrollEndTimerRef = useRef<number | null>(null);

@@ -57,7 +57,7 @@ const EXPERIENCES = [
 export default function ExperienceSection() {
   return (
     <section id="experience" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Work experience">
-      <SectionHeading index="02">Experience</SectionHeading>
+      <SectionHeading index="01">Experience</SectionHeading>
       <div className="stagger flex flex-col" data-reveal>
         {EXPERIENCES.map((exp) => (
           <ExperienceCard key={`${exp.company}-${exp.dateRange}`} {...exp} />

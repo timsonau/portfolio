@@ -5,7 +5,7 @@ const COLLEGE_TAGS = ["4.0 GPA", "Summa Cum Laude", "AI Club Officer"] as const;
 export default function EducationSection() {
   return (
     <section id="education" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Education">
-      <SectionHeading index="05">Education</SectionHeading>
+      <SectionHeading index="04">Education</SectionHeading>
       <div className="stagger flex flex-col" data-reveal>
         <div className="reveal-child border-b border-border/70 py-8 first:pt-0">
           <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
