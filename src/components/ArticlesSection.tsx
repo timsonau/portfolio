@@ -4,17 +4,14 @@ import useMediumArticles from "../hooks/useMediumArticles";
 
 function ArticleSkeleton() {
   return (
-    <div className="grid animate-pulse lg:grid-cols-8 lg:gap-4">
-      <div className="mb-3 lg:col-span-2 lg:mb-0">
-        <div className="aspect-video w-full rounded-md bg-muted" />
+    <div className="animate-pulse border-b border-border/70 py-8 first:pt-0 sm:flex sm:gap-6">
+      <div className="mb-4 sm:mb-0 sm:w-40 sm:shrink-0">
+        <div className="aspect-[4/3] w-full rounded-sm bg-muted" />
       </div>
-      <div className="lg:col-span-6">
-        <div className="h-5 w-3/4 rounded-sm bg-muted" />
-        <div className="mt-2 h-3 w-1/4 rounded-sm bg-muted" />
-        <div className="mt-3 flex gap-1.5">
-          <div className="h-5 w-16 rounded-sm bg-muted" />
-          <div className="h-5 w-12 rounded-sm bg-muted" />
-        </div>
+      <div className="min-w-0 flex-1">
+        <div className="h-3 w-16 rounded-sm bg-muted" />
+        <div className="mt-3 h-6 w-3/4 rounded-sm bg-muted" />
+        <div className="mt-3 h-3 w-1/3 rounded-sm bg-muted" />
       </div>
     </div>
   );
@@ -27,7 +24,7 @@ export default function ArticlesSection() {
     <section id="articles" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Blog articles">
       <SectionHeading index="03">Writing</SectionHeading>
       {loading && (
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col">
           <ArticleSkeleton />
           <ArticleSkeleton />
         </div>
@@ -47,7 +44,7 @@ export default function ArticlesSection() {
         </p>
       )}
       {!loading && !error && articles.length > 0 && (
-        <div className="group/list flex flex-col gap-5 stagger" data-reveal>
+        <div className="stagger flex flex-col" data-reveal>
           {articles.map((article) => (
             <ArticleCard key={article.link} {...article} />
           ))}

@@ -2,15 +2,12 @@ import SocialLinks from "./SocialLinks";
 
 export default function Hero() {
   return (
-    <header className="relative overflow-hidden border-b border-border/70 px-6 pb-14 pt-16 sm:px-8 sm:pt-24 md:pb-20">
-      <span
-        aria-hidden="true"
-        className="hero-mark pointer-events-none select-none"
-      >
-        TS
+    <header className="relative flex min-h-[86vh] flex-col justify-center overflow-hidden border-b border-border/70 px-6 pb-16 pt-24 sm:px-8">
+      <span aria-hidden="true" className="hero-mark pointer-events-none select-none">
+        &rdquo;
       </span>
 
-      <div className="relative mx-auto max-w-3xl">
+      <div className="relative mx-auto w-full max-w-3xl">
         <div className="hero-enter hero-delay-1 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
           <div className="h-11 w-11 shrink-0 overflow-hidden rounded-full border border-border shadow-sm">
             <img
@@ -25,17 +22,16 @@ export default function Hero() {
           </p>
         </div>
 
-        <h1 className="editorial-title hero-enter hero-delay-2 mt-7 text-6xl font-semibold leading-[0.96] tracking-tight text-foreground sm:text-7xl lg:text-[5.25rem]">
+        <h1 className="editorial-title hero-enter hero-delay-2 mt-8 text-7xl font-semibold leading-[0.92] tracking-tight text-foreground sm:text-8xl lg:text-[7rem]">
           Tim Son
         </h1>
 
-        <p className="hero-enter hero-delay-3 mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-          I build distributed systems and cloud infrastructure that hold up at
-          production scale, and lately, AI-powered tooling that makes teams
-          faster.
+        <p className="hero-enter hero-delay-3 mt-8 max-w-xl font-serif text-2xl italic leading-snug text-foreground/80 sm:text-3xl">
+          Distributed systems, cloud infrastructure, and AI-powered tooling
+          &mdash; built to hold up at production scale.
         </p>
 
-        <div className="hero-enter hero-delay-4 mt-8">
+        <div className="hero-enter hero-delay-4 mt-10">
           <SocialLinks />
         </div>
       </div>
