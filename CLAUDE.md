@@ -36,6 +36,10 @@ Pushing to `main` triggers `.github/workflows/pages.yaml`, which runs `npm ci &&
 
 ## Agent skills
 
+### Branch workflow
+
+Never commit or push directly to `main` — work happens on an issue-linked branch, merged via PR. See `docs/agents/workflow.md`.
+
 ### Issue tracker
 
 Issues are tracked in GitHub Issues (github.com/timsonau/portfolio) via the `gh` CLI. See `docs/agents/issue-tracker.md`.
