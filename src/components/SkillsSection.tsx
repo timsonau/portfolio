@@ -11,18 +11,19 @@ const SKILL_CATEGORIES = [
 export default function SkillsSection() {
   return (
     <section id="skills" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Technical skills">
-      <SectionHeading>Skills</SectionHeading>
-      <div className="section-frame flex flex-col gap-6 stagger" data-reveal>
+      <SectionHeading index="03">Skills</SectionHeading>
+      <div className="stagger flex flex-col gap-5" data-reveal>
         {SKILL_CATEGORIES.map((category) => (
-          <div key={category.title} className="reveal-child border-b border-border/60 pb-4 last:border-b-0 last:pb-0">
-            <h3 className="mb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">{category.title}</h3>
-            <div className="flex flex-wrap gap-2">
-              {category.skills.map((skill) => (
-                <span key={skill} className="editorial-chip inline-flex items-center px-2.5 py-1 text-[11px] font-medium text-card-foreground transition-all duration-300 hover:border-accent/35 hover:text-foreground">
-                  {skill}
-                </span>
-              ))}
-            </div>
+          <div
+            key={category.title}
+            className="reveal-child flex flex-col gap-1.5 border-b border-border/70 pb-5 last:border-b-0 last:pb-0 sm:flex-row sm:gap-6"
+          >
+            <h3 className="w-48 shrink-0 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent">
+              {category.title}
+            </h3>
+            <p className="text-sm leading-relaxed text-foreground/85">
+              {category.skills.join(" · ")}
+            </p>
           </div>
         ))}
       </div>

@@ -125,29 +125,30 @@ body {
   letter-spacing: -0.01em;
 }
 
-.section-frame {
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: 6px;
-  padding: 1.1rem;
+.pull-rule {
+  border-left: 2px solid var(--accent);
+  padding-left: 1.1rem;
 }
 
-.editorial-card {
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: 6px;
+.nav-fade {
+  mask-image: linear-gradient(to right, black calc(100% - 2.25rem), transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black calc(100% - 2.25rem), transparent 100%);
+}
+@media (min-width: 640px) {
+  .nav-fade {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
 }
 
-.editorial-chip {
-  border-radius: 4px;
-  background: var(--muted);
-  border: 1px solid var(--border);
-}
-
-.photo-frame {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(36, 31, 26, 0.08);
+.hero-mark {
+  position: absolute;
+  top: -4rem;
+  right: -1rem;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  font-size: clamp(10rem, 28vw, 20rem);
+  line-height: 1;
+  color: var(--accent);
+  opacity: 0.07;
 }

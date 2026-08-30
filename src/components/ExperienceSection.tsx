@@ -3,7 +3,7 @@ import SectionHeading from "./SectionHeading";
 
 const EXPERIENCES = [
   {
-    dateRange: "06/2026 \u2013 Present",
+    dateRange: "06/2026 – Present",
     title: "Software Engineer",
     company: "McMaster-Carr",
     companyUrl: "https://www.mcmaster.com",
@@ -13,7 +13,7 @@ const EXPERIENCES = [
     impact: "New AI chat product",
   },
   {
-    dateRange: "02/2026 \u2013 06/2026",
+    dateRange: "02/2026 – 06/2026",
     title: "Senior Software Engineer",
     company: "GEICO",
     companyUrl: "https://www.geico.com",
@@ -23,17 +23,17 @@ const EXPERIENCES = [
     impact: "$4M+ annual savings unlocked",
   },
   {
-    dateRange: "02/2025 \u2013 02/2026",
+    dateRange: "02/2025 – 02/2026",
     title: "Software Engineer II",
     company: "GEICO",
     companyUrl: "https://www.geico.com",
-    description: "Built the event tracking system from scratch in Go \u2013 replaced a vendor solution, saving $4M+ annually. Led the Swift SDK powering analytics across GEICO\u2019s iOS app.",
+    description: "Built the event tracking system from scratch in Go – replaced a vendor solution, saving $4M+ annually. Led the Swift SDK powering analytics across GEICO’s iOS app.",
     technologies: ["Go", "Kubernetes", "Swift", "React"],
     scope: "Tracking ingestion + mobile SDK",
     impact: "5k+ req/s pipeline throughput",
   },
   {
-    dateRange: "03/2024 \u2013 02/2025",
+    dateRange: "03/2024 – 02/2025",
     title: "Software Engineer I",
     company: "GEICO",
     companyUrl: "https://www.geico.com",
@@ -43,7 +43,7 @@ const EXPERIENCES = [
     impact: "<150ms query latency",
   },
   {
-    dateRange: "05/2021 \u2013 02/2024",
+    dateRange: "05/2021 – 02/2024",
     title: "Software Developer",
     company: "UDA Technologies",
     companyUrl: "https://www.udatechnologies.com",
@@ -57,13 +57,8 @@ const EXPERIENCES = [
 export default function ExperienceSection() {
   return (
     <section id="experience" className="scroll-mt-24 lg:scroll-mt-0" aria-label="Work experience">
-      <SectionHeading>Experience</SectionHeading>
-      <div className="mb-3 grid grid-cols-3 gap-2 rounded-md border border-border/70 bg-card/40 px-3 py-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
-        <span>Role</span>
-        <span>Scope</span>
-        <span>Impact</span>
-      </div>
-      <div className="group/list flex flex-col gap-5 stagger" data-reveal>
+      <SectionHeading index="01">Experience</SectionHeading>
+      <div className="stagger flex flex-col" data-reveal>
         {EXPERIENCES.map((exp) => (
           <ExperienceCard key={`${exp.company}-${exp.dateRange}`} {...exp} />
         ))}

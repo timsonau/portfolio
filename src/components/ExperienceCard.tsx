@@ -22,40 +22,41 @@ export default function ExperienceCard({
   impact,
 }: ExperienceCardProps) {
   return (
-    <article className="editorial-card reveal-child group relative p-4 transition-all duration-300 lg:hover:!opacity-100 lg:group-hover/list:opacity-55">
-      <div className="grid gap-2 lg:grid-cols-3">
-        <header className="z-10 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-          {dateRange}
-        </header>
-        <p className="text-xs text-muted-foreground">{scope}</p>
-        <p className="text-xs text-muted-foreground">{impact}</p>
-      </div>
-
-      <div className="mt-3 border-t border-border/70 pt-3">
-        <h3 className="font-medium leading-snug">
+    <article className="reveal-child group border-b border-border/70 py-8 first:pt-0 last:border-b-0">
+      <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+        <h3 className="editorial-title text-2xl font-semibold leading-tight text-foreground sm:text-3xl">
           {companyUrl ? (
             <a
               href={companyUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-baseline gap-1 text-foreground transition-colors duration-300 group-hover:text-highlight"
+              className="inline-flex items-baseline gap-1.5 transition-colors duration-300 hover:text-highlight"
             >
-              <span>{title} &middot; {company}</span>
-              <ArrowUpRight size={14} className="inline-block shrink-0 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              <span>{title}</span>
+              <ArrowUpRight size={16} className="inline-block shrink-0 translate-y-0.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           ) : (
-            <span className="text-foreground">{title} &middot; {company}</span>
+            title
           )}
         </h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{description}</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {technologies.map((tech) => (
-            <span key={tech} className="editorial-chip inline-flex items-center px-2.5 py-1 text-[11px] font-medium text-foreground/75">
-              {tech}
-            </span>
-          ))}
-        </div>
+        <span className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+          {dateRange}
+        </span>
       </div>
+
+      <p className="mt-1 text-sm font-medium text-highlight">
+        {company} &middot; {scope}
+      </p>
+
+      <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground">{description}</p>
+
+      <p className="pull-rule mt-5 max-w-xl font-serif text-lg italic leading-snug text-accent">
+        {impact}
+      </p>
+
+      <p className="mt-5 text-[11px] uppercase tracking-[0.12em] text-muted-foreground/70">
+        {technologies.join(" · ")}
+      </p>
     </article>
   );
 }
